@@ -2,9 +2,9 @@ wordpress_sites:
   carlosforla.com:
     site_hosts:
       - canonical: staging.carlosforla.com
-    local_path: ../staging.carlosforla.com
-    repo: git@github.com:pixelcollective/staging.carlosforla.com.git
-    repo_subtree_path: staging.carlosforla.com
+    local_path: ../carlosforla.com
+    repo: git@github.com:pixelcollective/carlosforla.com.git
+    repo_subtree_path: carlosforla.com
     branch: development
     multisite:
       enabled: false
