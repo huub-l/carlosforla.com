@@ -34,7 +34,7 @@ jobs:
     environment:
       ANSIBLE_HOST_KEY_CHECKING: false
       SITE_ENV: production
-      SITE_KEY: tinypixel.io
+      SITE_KEY: carlosforla.com
     steps:
       - checkout
       - add_ssh_keys:

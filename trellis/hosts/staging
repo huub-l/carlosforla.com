@@ -1,4 +1,4 @@
-staging.carlosforla.com 142.93.21.156
+staging.carlosforla.com ansible_host=142.93.21.156
 
 [staging]
 staging.carlosforla.com
