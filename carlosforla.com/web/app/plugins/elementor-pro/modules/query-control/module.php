@@ -75,7 +75,7 @@ class Module extends Module_Base {
 				'label' => __( 'Avoid Duplicates', 'elementor-pro' ),
 				'type' => Controls_Manager::SWITCHER,
 				'default' => '',
-				'description' => __( 'Set to Yes to avoid duplicate posts from showing up. This only effects the frontend.', 'elementor-pro' ),
+				'description' => __( 'Set to Yes to avoid duplicate posts from showing up on the page. This only affects the frontend.', 'elementor-pro' ),
 			]
 		);
 
@@ -101,7 +101,7 @@ class Module extends Module_Base {
 		switch ( $data['filter_type'] ) {
 			case 'taxonomy':
 				$query_params = [
-					'taxonomy' => $data['object_type'],
+					'taxonomy' => $this->extract_post_type( $data ),
 					'search' => $data['q'],
 					'hide_empty' => false,
 				];
@@ -129,7 +129,7 @@ class Module extends Module_Base {
 			case 'by_id':
 			case 'post':
 				$query_params = [
-					'post_type' => $data['object_type'],
+					'post_type' => $this->extract_post_type( $data ),
 					's' => $data['q'],
 					'posts_per_page' => -1,
 				];
@@ -141,11 +141,11 @@ class Module extends Module_Base {
 				$query = new \WP_Query( $query_params );
 
 				foreach ( $query->posts as $post ) {
+					$post_type_obj = get_post_type_object( $post->post_type );
 					if ( ! empty( $data['include_type'] ) ) {
-						$post_type_obj = get_post_type_object( $post->post_type );
 						$text = $post_type_obj->labels->singular_name . ': ' . $post->post_title;
 					} else {
-						$text = $post->post_title;
+						$text = ( $post_type_obj->hierarchical ) ? $this->get_post_name_with_parents( $post ) : $post->post_title;
 					}
 
 					$results[] = [
@@ -180,7 +180,7 @@ class Module extends Module_Base {
 				}
 				break;
 			default:
-				$results = apply_filters( 'elementor_pro/query_control/get_autocomplete/' . $data['filter_type'], [] );
+				$results = apply_filters( 'elementor_pro/query_control/get_autocomplete/' . $data['filter_type'], [], $data );
 		} // End switch().
 
 		return [
@@ -254,6 +254,15 @@ class Module extends Module_Base {
 		$controls_manager->register_control( self::QUERY_CONTROL_ID, new Query() );
 	}
 
+	private function extract_post_type( $data ) {
+
+		if ( ! empty( $data['query'] ) && ! empty( $data['query']['post_type'] ) ) {
+			return $data['query']['post_type'];
+		}
+
+		return $data['object_type'];
+	}
+
 	/**
 	 * get_term_name_with_parents
 	 * @param \WP_Term $term
@@ -286,6 +295,40 @@ class Module extends Module_Base {
 			$name_string .= $names[ $i ] . $separator;
 		}
 		return $name_string . '...' . $separator . $term->name;
+	}
+
+	/**
+	 * get post name with parents
+	 * @param \WP_Post $post
+	 * @param int $max
+	 *
+	 * @return string
+	 */
+	private function get_post_name_with_parents( $post, $max = 3 ) {
+		if ( 0 === $post->post_parent ) {
+			return $post->post_title;
+		}
+		$separator = is_rtl() ? ' < ' : ' > ';
+		$test_post = $post;
+		$names = [];
+		while ( $test_post->post_parent > 0 ) {
+			$test_post = get_post( $test_post->post_parent );
+			if ( ! $test_post ) {
+				break;
+			}
+			$names[] = $test_post->post_title;
+		}
+
+		$names = array_reverse( $names );
+		if ( count( $names ) < ( $max ) ) {
+			return implode( $separator, $names ) . $separator . $post->post_title;
+		}
+
+		$name_string = '';
+		for ( $i = 0; $i < ( $max - 1 ); $i++ ) {
+			$name_string .= $names[ $i ] . $separator;
+		}
+		return $name_string . '...' . $separator . $post->post_title;
 	}
 
 	public static function get_query_args( $control_id, $settings ) {

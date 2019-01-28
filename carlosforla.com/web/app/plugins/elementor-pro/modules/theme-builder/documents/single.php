@@ -15,7 +15,7 @@ class Single extends Theme_Page_Document {
 	/**
 	 * Document sub type meta key.
 	 */
-	const SUB_TYPE_META_KEY = '_elementor_template_sub_type';
+	const REMOTE_CATEGORY_META_KEY = '_elementor_template_sub_type';
 
 	public static function get_properties() {
 		$properties = parent::get_properties();
@@ -36,6 +36,7 @@ class Single extends Theme_Page_Document {
 
 	public static function get_editor_panel_config() {
 		$config = parent::get_editor_panel_config();
+
 		$config['widgets_settings']['theme-post-content'] = [
 			'show_in_panel' => true,
 		];
@@ -53,20 +54,19 @@ class Single extends Theme_Page_Document {
 		return $categories + parent::get_editor_panel_categories();
 	}
 
-	public function get_remote_library_type() {
-		$sub_type = $this->get_meta( self::SUB_TYPE_META_KEY );
+	public function before_get_content() {
+		parent::before_get_content();
 
-		if ( $sub_type ) {
-			if ( 'not_found404' === $sub_type ) {
-				$sub_type = '404 page';
-			} else {
-				$sub_type = 'single ' . $sub_type;
-			}
-
-			return $sub_type;
+		// For `loop_start` hook.
+		if ( have_posts() ) {
+			the_post();
 		}
+	}
 
-		return parent::get_remote_library_type();
+	public function after_get_content() {
+		wp_reset_postdata();
+
+		parent::after_get_content();
 	}
 
 	public function get_container_classes() {
@@ -102,7 +102,7 @@ class Single extends Theme_Page_Document {
 	protected function _register_controls() {
 		parent::_register_controls();
 
-		$post_type = $this->get_main_meta( self::SUB_TYPE_META_KEY );
+		$post_type = $this->get_main_meta( self::REMOTE_CATEGORY_META_KEY );
 
 		$latest_posts = get_posts( [
 			'posts_per_page' => 1,
@@ -196,11 +196,11 @@ class Single extends Theme_Page_Document {
 
 		$conditions_manager = Module::instance()->get_conditions_manager();
 
-		if ( ! empty( $_REQUEST[ self::SUB_TYPE_META_KEY ] ) ) {
-			$sub_type = $_REQUEST[ self::SUB_TYPE_META_KEY ];
+		if ( ! empty( $_REQUEST[ self::REMOTE_CATEGORY_META_KEY ] ) ) {
+			$sub_type = $_REQUEST[ self::REMOTE_CATEGORY_META_KEY ];
 
 			if ( $conditions_manager->get_condition( $sub_type ) ) {
-				$this->update_meta( self::SUB_TYPE_META_KEY, $sub_type );
+				$this->update_meta( self::REMOTE_CATEGORY_META_KEY, $sub_type );
 
 				$conditions_manager->save_conditions( $this->post->ID, [
 					[
@@ -211,5 +211,23 @@ class Single extends Theme_Page_Document {
 				] );
 			}
 		}
+	}
+
+	protected function get_remote_library_config() {
+		$config = parent::get_remote_library_config();
+
+		$category = $this->get_meta( self::REMOTE_CATEGORY_META_KEY );
+
+		if ( $category ) {
+			if ( 'not_found404' === $category ) {
+				$category = '404 page';
+			} else {
+				$category = 'single ' . $category;
+			}
+
+			$config['category'] = $category;
+		}
+
+		return $config;
 	}
 }

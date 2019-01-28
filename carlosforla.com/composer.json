@@ -57,7 +57,14 @@
     "tiny-pixel/wp-performant-media": ">=1",
     "tiny-pixel/corporate-communion": "@dev",
     "wpackagist-plugin/stream": "^3.2",
-    "wpackagist-plugin/elementor": ">=2.2"
+    "wpackagist-plugin/elementor": ">=2.2",
+    "wpackagist-plugin/dropit": ">=1",
+    "wpackagist-plugin/imagify": ">=1.8.0",
+    "wpackagist-plugin/members": ">=2.1.0",
+    "wpackagist-plugin/redirection": ">=3.3.1",
+    "wpackagist-plugin/autodescription": ">=3.0.6",
+    "wpackagist-plugin/cdn-enabler": ">=1",
+    "roots/wp-stage-switcher": "^2.0"
 
   },
   "require-dev": {

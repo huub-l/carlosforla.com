@@ -17,7 +17,7 @@ abstract class Theme_Document extends Library_Document {
 
 	public function get_location_label() {
 		$location = $this->get_location();
-		$locations_settings = Module::instance()->get_locations_manager()->get_locations( $location );
+		$locations_settings = Module::instance()->get_locations_manager()->get_location( $location );
 		$label = '';
 		$is_section_doc_type = 'section' === $this->get_name();
 
@@ -44,13 +44,22 @@ abstract class Theme_Document extends Library_Document {
 		return $label;
 	}
 
-	public function get_content( $with_css = false ) {
+	public function before_get_content() {
 		$preview_manager = Module::instance()->get_preview_manager();
 		$preview_manager->switch_to_preview_query();
+	}
+
+	public function after_get_content() {
+		$preview_manager = Module::instance()->get_preview_manager();
+		$preview_manager->restore_current_query();
+	}
+
+	public function get_content( $with_css = false ) {
+		$this->before_get_content();
 
 		$content = parent::get_content( $with_css );
 
-		$preview_manager->restore_current_query();
+		$this->after_get_content();
 
 		return $content;
 	}
@@ -76,21 +85,27 @@ abstract class Theme_Document extends Library_Document {
 	public static function get_properties() {
 		$properties = parent::get_properties();
 
-		$properties['group'] = 'blocks';
+		$properties['admin_tab_group'] = 'theme';
 
 		return $properties;
 	}
 
-	public function get_container_classes() {
-		$classes = parent::get_container_classes();
-		$classes .= ' elementor-type-' . $this->get_name();
+	public function get_container_attributes() {
+		$attributes = parent::get_container_attributes();
 
 		$location = Module::instance()->get_locations_manager()->get_current_location();
+
 		if ( $location ) {
-			$classes .= ' elementor-location-' . $location;
+			$attributes['class'] .= ' elementor-location-' . $location;
 		}
 
-		return $classes;
+		if ( is_singular() ) {
+			$post_classes = get_post_class( '', get_the_ID() );
+
+			$attributes['class'] .= ' ' . implode( ' ', $post_classes );
+		}
+
+		return $attributes;
 	}
 
 	/**
