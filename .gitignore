@@ -1,2 +1,4 @@
 node_modules
 **/database/
+
+!carlsoforla.com/web/app/plugins/wrd-up
