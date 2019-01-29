@@ -1,0 +1,68 @@
+{
+  "name": "roots/roots-share-buttons",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "Lightweight social share utilities",
+  "homepage": "https://roots.io/",
+  "authors": [
+    {
+      "name": "Ben Word",
+      "email": "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name": "Kelly Mears",
+      "email": "developers@tinypixel.io",
+      "homepage": "https://github.com/kellymears"
+    },
+    {
+      "name": "Nathan Knowler",
+      "email": "nathan@knowler.me",
+      "homepage": "https://github.com/knowler"
+    }
+  ],
+  "keywords": [
+    "social share",
+    "roots"
+  ],
+  "support": {
+    "issues": "https://github.com/roots/social-share-buttons/issues",
+    "forum": "https://discourse.roots.io/"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pixel\\Plugins\\": "app",
+      "Roots\\Clover\\": "src/Clover",
+      "Sober\\Intervention\\": "app/Mods"
+    },
+    "files": [
+      "src/Clover/helpers.php",
+      "app/Mods/stageIntervention.php",
+      "app/Mods/adminToConsole.php",
+      "app/Mods/supportChat.php",
+      "app/PostTypes/PostTypes.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Roots\\Plugin\\Share\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "composer/installers": "^1.0",
+    "roots/acorn": "dev-master",
+    "roots/support": "dev-master",
+    "soberwp/intervention": "^1.2",
+    "htmlburger/carbon-fields": "^3.0",
+    "jjgrainger/posttypes": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2",
+    "squizlabs/php_codesniffer": "^3.3"
+  },
+  "scripts": {
+    "lint": "phpcs",
+    "test": "echo 'The road to hell is paved with good intentions.'"
+  }
+}

@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:25
+msgid "Button Settings"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:30
+msgid "Button Color"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:35
+msgid "Text Color"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:40
+msgid "Size"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:43
+msgid "Small"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:44
+msgid "Normal"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:45
+msgid "Large"
+msgstr ""
+
+#: resources/assets/scripts/base/PanelButtonSettings.js:50
+msgid "Border Radius"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:51
+msgid "Standard"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:52
+msgid "Ghost"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:56
+msgid "Social Share Buttons"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:57
+msgid "Lightweight social sharing buttons"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:59
+msgid "Roots"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/components/edit.js:66
+msgid "Facebook displayed"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/components/edit.js:66
+msgid "Facebook hidden"
+msgstr ""

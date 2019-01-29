@@ -1,0 +1,56 @@
+{
+  "name": "w-r-d-u-p",
+  "version": "2.0.0",
+  "author": "Roots <team@roots.io>",
+  "homepage": "https://roots.io/",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roots/roots-share-buttons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roots/roots-share-buttons/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@wordpress/babel-plugin-makepot": "^2.1.3",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "2.0.1",
+    "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-vue": "^5.1.0",
+    "import-glob": "^1.5.0",
+    "laravel-mix": "^4.0.14",
+    "laravel-mix-eslint": "^0.1.2",
+    "laravel-mix-stylelint": "^0.2.0",
+    "resolve-url-loader": "2.3.1",
+    "sass": "^1.16.1",
+    "sass-loader": "7.*",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
+  }
+}

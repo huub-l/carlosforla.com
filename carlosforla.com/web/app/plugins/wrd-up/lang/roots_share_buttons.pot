@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:51
+msgid "Standard"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:52
+msgid "Ghost"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:56
+msgid "Social Share Buttons"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:57
+msgid "Lightweight social sharing buttons"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/RootsShareButtons.js:59
+msgid "Roots"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/components/edit.js:66
+msgid "Facebook displayed"
+msgstr ""
+
+#: resources/assets/scripts/social-share-buttons/components/edit.js:66
+msgid "Facebook hidden"
+msgstr ""

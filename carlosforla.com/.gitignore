@@ -6,6 +6,7 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 !web/app/plugins/elementor-pro
+!web/app/plugins/wrd-up
 
 # WordPress
 web/wp
