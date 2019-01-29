@@ -1,5 +1,5 @@
 import {
-  render
+  render,
 } from './../imports'
 
 export const Output = () => {
