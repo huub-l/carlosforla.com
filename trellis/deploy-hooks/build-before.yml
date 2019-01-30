@@ -1,3 +1,5 @@
+# Sage
+#
  - name: Install npm dependencies
    command: yarn
    connection: local
@@ -23,6 +25,8 @@
      owner: no
      rsync_opts: --chmod=Du=rwx,--chmod=Dg=rx,--chmod=Do=rx,--chmod=Fu=rw,--chmod=Fg=r,--chmod=Fo=r
 
+# Clover
+#
  - name: Install npm dependencies
    command: yarn
    connection: local
