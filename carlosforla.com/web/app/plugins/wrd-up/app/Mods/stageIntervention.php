@@ -6,7 +6,6 @@ use function \Sober\Intervention\intervention;
 
 if (function_exists('\Sober\Intervention\intervention')) :
     define('UPDRAFTPLUS_ADMINBAR_DISABLE', true);
-    add_filter('acf/settings/show_admin', '__return_false');
 
     intervention('remove-dashboard-items');
     intervention('update-dashboard-columns', 2);
@@ -69,6 +68,8 @@ if (function_exists('\Sober\Intervention\intervention')) :
 
     add_action('init', function () {
         if (!(current_user_can('developer_settings'))) :
+            add_filter('acf/settings/show_admin', '__return_false');
+
             intervention('remove-menu-items', ['tools', 'settings', 'themes', 'widgets'], 'all');
         endif;
 
