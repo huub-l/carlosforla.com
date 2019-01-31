@@ -11,7 +11,7 @@
             "version": "5.7.7",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=5.7.7",
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download",
                 "reference": null,
                 "shasum": null
             },
@@ -388,7 +388,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.0.3",
-                "reference": "5.0.3",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -927,15 +927,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.4.4",
+            "version": "2.4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.4.4"
+                "reference": "tags/2.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.2.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
