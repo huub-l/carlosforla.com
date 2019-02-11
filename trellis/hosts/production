@@ -1,8 +1,7 @@
-# Add each host to the [production] group and to a "type" group such as [web] or [db].
-# List each machine only once per [group], even if it will host multiple sites.
+carlosforla.com ansible_host=104.248.56.187
 
 [production]
-your_server_hostname
+carlosforla.com
 
 [web]
-your_server_hostname
+carlosforla.com
