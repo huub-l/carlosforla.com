@@ -1,5 +1,5 @@
 {
-    "/scripts/admin.js": "/scripts/admin.js",
-    "/scripts/main.js": "/scripts/main.js",
-    "/styles/main.css": "/styles/main.css"
+  "scripts/admin.js": "scripts/admin.js?id=4062dc049932301abb0e",
+  "scripts/main.js": "scripts/main.js?id=86b7dfd4034fe847a798",
+  "styles/main.css": "styles/main.css?id=fe418d214aa6511a63a4"
 }
