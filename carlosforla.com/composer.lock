@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99bc381d03bba978ef0818bd55de4a95",
+    "content-hash": "3329fa04ecb86ac2a1d1f084833280ed",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -574,6 +574,25 @@
                 "portable"
             ],
             "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "tiny-packagist/wp-rocket",
+            "version": "3.3.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.tinypixel.io/satispress/wp-rocket/3.3.1.1",
+                "shasum": "c991d9de524b800c51e8830852ca53dc36f2fc95"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "WP Media",
+                "homepage": "https://wp-media.me"
+            },
+            "description": "The best WordPress performance plugin.",
+            "homepage": "https://wp-rocket.me"
         },
         {
             "name": "tiny-pixel/wp-performant-media",
