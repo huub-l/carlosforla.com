@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -34,10 +39,6 @@
     {
       "type": "composer",
       "url": "https://packages.tinypixel.io/satispress/"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/pixelcollective/corporate-communion"
     },
     {
       "type": "package",
@@ -62,17 +63,12 @@
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.1.0",
     "roots/soil": ">=3.7.3",
-    "roots/wordpress": "5.1",
+    "roots/wordpress": "5.1.1",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/updraftplus": ">=1",
-    "tiny-packagist/wp-migrate-db-pro": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-cli": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-media-files": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-multisite-tools": ">=1",
     "advanced-custom-fields/advanced-custom-fields-pro": ">=5",
     "tiny-pixel/wp-performant-media": ">=1",
-    "tiny-pixel/corporate-communion": "@dev",
     "wpackagist-plugin/stream": "^3.2",
     "wpackagist-plugin/elementor": ">=2.2",
     "wpackagist-plugin/dropit": ">=1",
@@ -82,7 +78,6 @@
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/cdn-enabler": ">=1",
     "roots/wp-stage-switcher": "^2.0"
-
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
@@ -90,9 +85,15 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
