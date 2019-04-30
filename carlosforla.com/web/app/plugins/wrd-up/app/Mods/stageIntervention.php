@@ -15,14 +15,12 @@ if (function_exists('\Sober\Intervention\intervention')) :
         'remove-howdy',
         '👏🏽 '
     );
-    intervention(
-        'remove-page-components',
-        [
+
+    intervention('remove-page-components', [
             'comments',
-            'author',
-            'page-attributes'
-        ]
-    );
+            'author'
+    ]);
+
     intervention(
         'remove-toolbar-items',
         [
@@ -34,6 +32,7 @@ if (function_exists('\Sober\Intervention\intervention')) :
             'edit-translation',
         ]
     );
+
     intervention(
         'remove-user-fields',
         [
@@ -43,9 +42,8 @@ if (function_exists('\Sober\Intervention\intervention')) :
             'option-shortcuts'
         ]
     );
-    intervention(
-        'remove-widgets',
-        [
+
+    intervention('remove-widgets', [
             'calendar',
             'archives',
             'links',
@@ -58,29 +56,27 @@ if (function_exists('\Sober\Intervention\intervention')) :
             'media-video',
             'akismet',
             'media-audio'
-        ]
-    );
+    ]);
+
     intervention(
         'update-label-footer',
-        'Developed by <a href="https://tinypixel.io">Tiny Pixel Collective</a>.'
+        'Developed by <a href="https://tinypixel.dev">Tiny Pixel Collective</a>.'
     );
+
     intervention('remove-menu-items', ['comments'], 'all');
 
     add_action('init', function () {
         if (!(current_user_can('developer_settings'))) :
             add_filter('acf/settings/show_admin', '__return_false');
 
-            intervention('remove-menu-items', ['tools', 'settings', 'themes', 'widgets'], 'all');
+            intervention('remove-menu-items', ['tools', 'themes', 'widgets'], 'all');
         endif;
 
         if (!(current_user_can('admin_settings')) || !(current_user_can('developer_settings'))) :
-            add_action(
-                'admin_menu',
-                function () {
+            add_action('admin_menu', function () {
                     remove_menu_page('admin.php?page=theseoframework-settings');
                     remove_menu_page('index.php', 'update-core.php');
-                }
-            );
+            });
         endif;
     });
 endif;
