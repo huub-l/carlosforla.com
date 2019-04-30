@@ -51,10 +51,6 @@ class Base extends Plugin
     {
         // Editor Add-ons
         (new Buttons('wrd-up', plugins_url('wrd-up'), plugin_dir_path('wrd-up')));
-
-        // Admin Options
-        (new Options());
-
     }
 
     /**
