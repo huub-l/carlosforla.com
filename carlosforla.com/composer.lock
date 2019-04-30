@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebe31f0239cab693e5e897ffdf2c5f9a",
+    "content-hash": "940f4caceda25384e1d2ee487f75c216",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
             "version": "5.7.7",
             "dist": {
                 "type": "zip",
-                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&t=5.7.7"
             },
             "require": {
                 "composer/installers": "^1.0",
@@ -293,7 +293,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.1.1"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.1.1",
+                "reference": "5.1.1"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -561,7 +562,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -912,6 +913,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/stream/"
+        },
+        {
+            "name": "wpackagist-plugin/translatepress-multilingual",
+            "version": "1.4.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/translatepress-multilingual/",
+                "reference": "tags/1.4.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/translatepress-multilingual.1.4.5.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/translatepress-multilingual/"
         },
         {
             "name": "wpackagist-plugin/updraftplus",

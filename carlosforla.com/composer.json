@@ -68,6 +68,7 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/updraftplus": ">=1",
     "advanced-custom-fields/advanced-custom-fields-pro": ">=5",
+    "wpackagist-plugin/translatepress-multilingual":"1.4.5",
     "tiny-packagist/tp-add-on-automatic-language-detection": "1.0.3",
     "tiny-packagist/tp-add-on-extra-languages": "1.0.1",
     "tiny-packagist/tp-add-on-navigation-based-on-language": "1.0.0",
