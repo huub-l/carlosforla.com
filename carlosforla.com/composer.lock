@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ecbd0fa46b3d7602dc600d68737f0265",
+    "content-hash": "ba6426445e447195e5dbb93ebf2cb279",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -915,15 +915,15 @@
         },
         {
             "name": "wpackagist-plugin/translatepress-multilingual",
-            "version": "1.4.5",
+            "version": "1.4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/translatepress-multilingual/",
-                "reference": "tags/1.4.5"
+                "reference": "tags/1.4.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/translatepress-multilingual.1.4.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/translatepress-multilingual.1.4.7.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
